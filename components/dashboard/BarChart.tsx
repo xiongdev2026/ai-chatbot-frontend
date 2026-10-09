@@ -43,7 +43,7 @@ export default function BarChart({
     const chartH = H - padTop - padBottom;
 
     const max =
-      maxValue || Math.max(...data.map((d) => d.value), 0) * 1.2;
+      (maxValue || Math.max(...data.map((d) => d.value), 0) * 1.2) || 1;
 
     ctx.clearRect(0, 0, W, H);
 
