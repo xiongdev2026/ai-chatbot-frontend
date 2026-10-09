@@ -41,7 +41,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
-  const [user, setUser] = useState<{ userRole?: string; email?: string; name?: string } | null>(null);
+  const [user, setUser] = useState<{ role?: string; userRole?: string; email?: string; fullName?: string } | null>(null);
 
   const pathname = usePathname();
 
@@ -87,8 +87,7 @@ export default function Navbar() {
 
   const router = useRouter();
 
-  const displayName = user?.userRole || user?.name || 'Admin';
-  const displayEmail = user?.email || 'admin@gmail.com';
+  const displayName = user?.fullName || 'Admin';
 
   const handleLogout = async () => {
     const success = await logout();
@@ -177,8 +176,7 @@ export default function Navbar() {
                 A
               </div>
               <div className="flex flex-col">
-                <span className="text-xs font-medium text-white">{user?.userRole || 'Admin'}</span>
-                <span className="text-[10px] text-gray-400">{user?.email || 'admin@gmail.com'}</span>
+                <span className="text-xs font-medium text-white">{displayName}</span>
               </div>
               <ChevronDown className={`ml-1 h-3.5 w-3.5 text-gray-400 transition-transform ${profileDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -320,7 +318,6 @@ export default function Navbar() {
               </div>
               <div className="min-w-0">
                 <p className="truncate text-sm font-medium text-white">{displayName}</p>
-                <p className="truncate text-xs text-gray-400">{displayEmail}</p>
               </div>
             </div>
             <button
