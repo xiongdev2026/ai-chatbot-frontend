@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { api } from "@/lib/axios";
 import { ShieldCheck, Loader2, ArrowRight, Ambulance, CalendarCheck, HelpCircle } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface ServiceItem {
   id: string;
@@ -73,8 +74,22 @@ export default function Services() {
         </div>
 
         {loading ? (
-          <div className="flex justify-center items-center py-20 text-blue-400">
-            <Loader2 className="w-8 h-8 animate-spin" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="rounded-2xl bg-slate-900 border border-slate-800 p-6 flex flex-col space-y-4 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <Skeleton className="w-12 h-12 rounded-xl bg-slate-800" />
+                  <Skeleton className="h-5 w-24 rounded-full bg-slate-800" />
+                </div>
+                <div className="space-y-2">
+                  <Skeleton className="h-6 w-3/4 bg-slate-800 mt-1" />
+                  <Skeleton className="h-16 w-full bg-slate-800 mt-2" />
+                </div>
+                <div className="mt-6 pt-4 border-t border-slate-800/80">
+                  <Skeleton className="h-11 w-full rounded-xl bg-slate-800" />
+                </div>
+              </div>
+            ))}
           </div>
         ) : services.length === 0 ? (
           <div className="text-center py-12 text-slate-400">

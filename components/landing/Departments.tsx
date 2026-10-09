@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { api } from "@/lib/axios";
 import { Building2, Clock, MapPin, Loader2, ArrowRight } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface Department {
   id: string;
@@ -59,8 +60,19 @@ export default function Departments() {
         </div>
 
         {loading ? (
-          <div className="flex justify-center items-center py-20 text-blue-400">
-            <Loader2 className="w-8 h-8 animate-spin" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="rounded-2xl bg-slate-800/80 border border-slate-700/60 p-6 flex flex-col space-y-4 shadow-sm">
+                <Skeleton className="w-12 h-12 rounded-xl bg-slate-700" />
+                <Skeleton className="h-6 w-3/4 bg-slate-700" />
+                <Skeleton className="h-16 w-full bg-slate-700 mt-2" />
+                <div className="mt-6 pt-4 border-t border-slate-700/50 space-y-3">
+                  <Skeleton className="h-4 w-2/3 bg-slate-700" />
+                  <Skeleton className="h-4 w-1/2 bg-slate-700" />
+                  <Skeleton className="h-9 w-full rounded-lg bg-slate-700 mt-2" />
+                </div>
+              </div>
+            ))}
           </div>
         ) : departments.length === 0 ? (
           <div className="text-center py-12 text-slate-400">

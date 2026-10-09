@@ -103,9 +103,9 @@ export default function LoginForm() {
               <input type="checkbox" className="w-4 h-4" />
               ຈົດຈຳລະຫັດ
             </label>
-            <a href="#" className="text-gray-600 hover:underline">
+            {/* <a href="#" className="text-gray-600 hover:underline">
               ລືມລະຫັດຜ່ານ?
-            </a>
+            </a> */}
           </div>
 
           <button
