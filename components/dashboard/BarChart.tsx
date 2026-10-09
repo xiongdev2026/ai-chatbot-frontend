@@ -82,7 +82,8 @@ export default function BarChart({
       const y = padTop + chartH - barH;
 
       // gradient
-      const grad = ctx.createLinearGradient(x, y, x, padTop + chartH);
+      const endY = padTop + chartH;
+      const grad = ctx.createLinearGradient(x, y, x, y === endY ? endY + 0.1 : endY);
       grad.addColorStop(0, barColor || 'rgba(129, 104, 255, 0.9)');
       grad.addColorStop(1, barColor || 'rgba(129, 104, 255, 0.3)');
 
