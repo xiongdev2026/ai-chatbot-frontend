@@ -110,8 +110,12 @@ export default function ChatbotWidget() {
     if (!question || loading) return;
 
     setInput("");
-    const userMsgId = crypto.randomUUID();
-    const botMsgId = crypto.randomUUID();
+    const generateId = () =>
+      typeof crypto !== "undefined" && crypto.randomUUID
+        ? crypto.randomUUID()
+        : Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    const userMsgId = generateId();
+    const botMsgId = generateId();
 
     const newMessages: ChatMessageItem[] = [
       ...messages,

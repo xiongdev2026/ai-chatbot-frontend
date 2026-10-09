@@ -20,7 +20,10 @@ const LEGACY_KEY = "chat_session_id";
 
 export const DEFAULT_SESSION_TITLE = "ການສົນທະນາໃໝ່";
 
-const uuid = () => crypto.randomUUID();
+const uuid = () =>
+  typeof crypto !== "undefined" && crypto.randomUUID
+    ? crypto.randomUUID()
+    : Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
 function read(): ChatSession[] {
   try {
