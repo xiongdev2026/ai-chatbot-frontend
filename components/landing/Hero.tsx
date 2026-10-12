@@ -51,17 +51,19 @@ export default function Hero() {
 
       {/* Top Header / Navigation Bar */}
       <header className="relative z-10 w-full border-b border-white/10 backdrop-blur-md bg-slate-950/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#0070f3] to-cyan-500 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
-              <Building2 className="w-6 h-6 text-white" />
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 group min-w-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#0070f3] to-cyan-500 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform shrink-0">
+              <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
-            <div>
-              <span className="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
-                AI <span className="text-blue-400 text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-500/10 border border-blue-400/20">Hospital</span>
+            <div className="min-w-0">
+              <span className="text-base sm:text-xl font-bold tracking-tight text-white flex items-center gap-1.5 leading-tight">
+                AI <span className="text-blue-400 text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-1.5 sm:px-2 py-0.5 rounded-full bg-blue-500/10 border border-blue-400/20">Hospital</span>
               </span>
-              <p className="text-[11px] text-blue-200/70 font-medium">Asia Investment & Development Co.</p>
+              <p className="text-[10px] sm:text-[11px] text-blue-200/70 font-medium truncate max-w-[130px] sm:max-w-none">
+                Asia Investment & Development Co.
+              </p>
             </div>
           </Link>
 
@@ -88,25 +90,25 @@ export default function Hero() {
             </button>
           </nav>
 
-          {/* Action Button */}
-          <div className="flex items-center gap-3">
+          {/* Action Buttons */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               type="button"
               onClick={openSurvey}
-              className="md:hidden inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 text-amber-300 border border-white/15 transition-all cursor-pointer"
+              className="md:hidden inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 text-amber-300 border border-white/15 transition-all cursor-pointer"
             >
-              <Star className="w-3.5 h-3.5 fill-amber-300 text-amber-300" />
+              <Star className="w-3.5 h-3.5 fill-amber-300 text-amber-300 shrink-0" />
               <span>Survey</span>
             </button>
 
             <button
               type="button"
               onClick={() => openChatbot()}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#0070f3] hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30 transition-all duration-200 hover:shadow-blue-600/50 hover:scale-[1.02] cursor-pointer"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#0070f3] hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30 transition-all duration-200 hover:shadow-blue-600/50 hover:scale-[1.02] cursor-pointer"
             >
-              <Sparkles className="w-3.5 h-3.5" />
+              <Sparkles className="w-3.5 h-3.5 shrink-0" />
               <span>Talk to AI</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="hidden sm:inline w-3.5 h-3.5 shrink-0" />
             </button>
           </div>
         </div>
@@ -114,17 +116,17 @@ export default function Hero() {
 
       {/* Main Hero Content */}
       <main className="relative z-10 flex-1 flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 w-full">
-          <div className="max-w-3xl space-y-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24 lg:py-32 w-full">
+          <div className="max-w-3xl space-y-6 sm:space-y-8">
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-200 backdrop-blur-md text-xs sm:text-sm font-medium shadow-sm animate-in fade-in slide-in-from-bottom-3 duration-700">
+            <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-200 backdrop-blur-md text-xs sm:text-sm font-medium shadow-sm animate-in fade-in slide-in-from-bottom-3 duration-700">
               <span className="text-base">🏥</span>
               <span>Welcome to <strong className="text-white font-semibold">AI Hospital</strong></span>
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] drop-shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-800">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] drop-shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-800">
               Your Health, <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-200">
                 Our Priority
@@ -132,19 +134,19 @@ export default function Hero() {
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg lg:text-xl text-slate-200/90 leading-relaxed max-w-2xl font-normal drop-shadow animate-in fade-in slide-in-from-bottom-5 duration-900">
+            <p className="text-sm sm:text-lg lg:text-xl text-slate-200/90 leading-relaxed max-w-2xl font-normal drop-shadow animate-in fade-in slide-in-from-bottom-5 duration-900">
               We provide comprehensive medical care with experienced doctors, modern departments, and a wide range of medical services — available 24/7 through our AI assistant.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 animate-in fade-in slide-in-from-bottom-6 duration-1000">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 animate-in fade-in slide-in-from-bottom-6 duration-1000">
               {/* Primary Button: Service */}
               <button
                 type="button"
                 onClick={() => openChatbot("Service")}
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-semibold bg-[#22c55e] hover:bg-[#16a34a] text-white shadow-xl shadow-emerald-600/30 transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-600/50 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold bg-[#22c55e] hover:bg-[#16a34a] text-white shadow-xl shadow-emerald-600/30 transition-all duration-200 hover:shadow-2xl hover:shadow-emerald-600/50 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
-                <HeartPulse className="w-5 h-5" />
+                <HeartPulse className="w-5 h-5 shrink-0" />
                 <span>Service</span>
               </button>
 
@@ -152,43 +154,43 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => openChatbot("More Info")}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold bg-[#64748b]/80 hover:bg-[#475569] text-white border border-white/20 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-lg cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold bg-[#64748b]/80 hover:bg-[#475569] text-white border border-white/20 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-lg cursor-pointer"
               >
-                <Info className="w-4 h-4 text-slate-200" />
+                <Info className="w-4 h-4 text-slate-200 shrink-0" />
                 <span>More Info</span>
-                <ChevronRight className="w-4 h-4 text-slate-300" />
+                <ChevronRight className="w-4 h-4 text-slate-300 shrink-0" />
               </button>
             </div>
 
             {/* Trust Highlights */}
-            <div className="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl text-slate-200 animate-in fade-in duration-1000 delay-300">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-blue-500/10 border border-blue-400/20 text-blue-400">
-                  <Stethoscope className="w-5 h-5" />
+            <div className="pt-6 sm:pt-8 border-t border-white/10 grid grid-cols-3 gap-2 sm:gap-8 max-w-xl text-slate-200 animate-in fade-in duration-1000 delay-300">
+              <div className="flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1 sm:gap-3">
+                <div className="p-1.5 sm:p-2 rounded-lg bg-blue-500/10 border border-blue-400/20 text-blue-400 shrink-0">
+                  <Stethoscope className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-bold text-white">10+</h4>
-                  <p className="text-[11px] sm:text-xs text-slate-300">Doctors</p>
+                  <h4 className="text-sm sm:text-lg font-bold text-white">10+</h4>
+                  <p className="text-[10px] sm:text-xs text-slate-300">Doctors</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-400">
-                  <Clock className="w-5 h-5" />
+              <div className="flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1 sm:gap-3">
+                <div className="p-1.5 sm:p-2 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-400 shrink-0">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-bold text-white">24/7</h4>
-                  <p className="text-[11px] sm:text-xs text-slate-300">AI Assistant</p>
+                  <h4 className="text-sm sm:text-lg font-bold text-white">24/7</h4>
+                  <p className="text-[10px] sm:text-xs text-slate-300">AI Assistant</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-400/20 text-emerald-400">
-                  <Zap className="w-5 h-5" />
+              <div className="flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-1 sm:gap-3">
+                <div className="p-1.5 sm:p-2 rounded-lg bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 shrink-0">
+                  <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-bold text-white">{responseSpeed}s</h4>
-                  <p className="text-[11px] sm:text-xs text-slate-300">ຕອບໃນ {responseSpeed} ວິນາທີ</p>
+                  <h4 className="text-sm sm:text-lg font-bold text-white">{responseSpeed}s</h4>
+                  <p className="text-[10px] sm:text-xs text-slate-300">ຕອບໄວ {responseSpeed}s</p>
                 </div>
               </div>
             </div>
